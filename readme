@@ -1,0 +1,7 @@
+This is a jQuery plugin that gives you the ability to compare two images (before and after, etc) via a nice interface.
+
+@name ClassyCompare
+@package jQuery plugin
+@author Marius Stanciu - Sergiu <marius@picozu.net>
+@website http://www.class.pm/projects/jquery/classycompare
+@version 1.1.0

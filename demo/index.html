@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jQuery ClassyCompare plugin | Class.PM</title>
+        <link rel="stylesheet" media="screen" href="css/documentation.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/jquery.classycompare.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.classycompare.css" />
+        <style type="text/css">.sample1 {width:319px; height:433px;}.sample2 {width:319px; height:364px;}.sample3 {width:700px; height:361px;}</style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div class="container_6 clearfix">
+                    <h1 class="grid_6">jQuery ClassyCompare</h1>
+                </div>
+            </header>
+            <section>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Overview</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><a href="http://www.class.pm/projects/jquery/classycompare">ClassyCompare</a> is a <a href="http://www.jquery.com">jQuery</a> plugin written by <a href="http://www.class.pm">Marius Stanciu - Sergiu</a>, a plugin that gives you the ability to compare two images (before and after, etc) via a nice interface.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Instructions</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+<p>First you need to include the jQuery library, since ClassyCompare is a plugin. You can download it from the <a href="http://www.jquery.com">jQuery website</a> or link it directly from the Google CDN.</p>
+<pre>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+</pre>
+<p>Secondly, you need to include the jQuery ClassyCompare javascript and the css file into your page. You can do it by adding the code below to your page.</p>
+<pre>
+&lt;script src="js/jquery.classycompare.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/jquery.classycompare.css" /&gt;
+</pre>
+<p>Next, you implement the actual image(s) that will be processed by the plugin. The structure is as simple as it can get.</p>
+<pre>
+&lt;div class="sample1"&gt;
+    &lt;img alt="Your before caption" src="your-image1.jpg" /&gt;
+    &lt;img alt="Your after caption" src="your-image2.jpg" /&gt;
+&lt;/div&gt;
+</pre>
+<p>As the last step, you trigger the <em>ClassyCompare()</em> function on the element you just created. In this case, we trigger the function on the div with the class <em>sample1</em>.</p>
+<pre>
+$(".sample1").ClassyCompare({
+    defaultgap: 50,
+    leftgap: 0,
+    rightgap: 10,
+    caption: true,
+    reveal: 0.5
+});
+</pre>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Options</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><em><strong>caption</strong></em> - toggle the showing of image caption. Options can be: true/false</p>
+                                    <p><em><strong>leftgap</strong></em> - the gap to the left of the image</p>
+                                    <p><em><strong>rightgap</strong></em> - the gap to the right of the image</p>
+                                    <p><em><strong>defaultgap</strong></em> - the default gap shown before any interactions</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Demo</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <div class="container" style="position:relative">
+                                        <div class="sample1">
+                                            <img src="images/demo/image1.jpg" width="319" height="433" alt="Before" />
+                                            <img src="images/demo/image2.jpg" width="319" height="433" alt="After. Amazing, heh?!" />		
+                                        </div>
+                                        <p><em>Showing a caption for both of the states.</em></p>
+                                    </div>
+                                    <div class="container" style="position:relative">
+                                        <div class="sample2">
+                                            <img src="images/demo/image4.jpg" width="319" height="364" alt="Before" />
+                                            <img src="images/demo/image3.jpg" width="319" height="364" alt="After. Amazing, heh?!" />		
+                                        </div>
+                                        <p><em>Showing no caption.</em></p>
+                                    </div>
+                                    <div class="container" style="position:relative">
+                                        <div class="sample3">
+                                            <img src="images/demo/image5.jpg" width="700" height="361" alt="Before" />
+                                            <img src="images/demo/image6.jpg" width="700" height="361" alt="After" />		
+                                        </div>
+                                        <p><em>Another before/after photo, Japan after 2011 tsunami and earthquake.</em></p>
+                                    </div>
+                                    <script>
+                                        $(document).ready(function()
+                                        {
+                                            $('.sample1').ClassyCompare({
+                                                defaultgap:50, 
+                                                leftgap:0, 
+                                                rightgap:10, 
+                                                caption: true, 
+                                                reveal: 0.5
+                                            });
+                                            $('.sample2').ClassyCompare({
+                                                defaultgap:100, 
+                                                leftgap:0, 
+                                                rightgap:0, 
+                                                caption: false, 
+                                                reveal: 0.5
+                                            });
+                                            $('.sample3').ClassyCompare({
+                                                defaultgap:400, 
+                                                leftgap:0, 
+                                                rightgap:0, 
+                                                caption: false, 
+                                                reveal: 0.5
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-30825160-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
