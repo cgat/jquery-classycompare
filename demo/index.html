@@ -57,14 +57,17 @@
 </pre>
 <p>As the last step, you trigger the <em>ClassyCompare()</em> function on the element you just created. In this case, we trigger the function on the div with the class <em>sample1</em>.</p>
 <pre>
-$(".sample1").ClassyCompare({
-    defaultgap: 50,
-    leftgap: 0,
-    rightgap: 10,
-    caption: true,
-    reveal: 0.5
+$(window).load(function() {
+    $(".sample1").ClassyCompare({
+        defaultgap: 50,
+        leftgap: 0,
+        rightgap: 10,
+        caption: true,
+        reveal: 0.5
+    });
 });
 </pre>
+<p><strong>NOTE:</strong> You have to use <em>$(window).load()</em> and not <em>$(document).ready()</em>, else the script will go bonkers.</p>
                                 </div>
                             </section>
                         </div>
@@ -117,8 +120,7 @@ $(".sample1").ClassyCompare({
                                         <p><em>Another before/after photo, Japan after 2011 tsunami and earthquake.</em></p>
                                     </div>
                                     <script>
-                                        $(document).ready(function()
-                                        {
+                                        $(window).load(function() {
                                             $('.sample1').ClassyCompare({
                                                 defaultgap:50, 
                                                 leftgap:0, 
