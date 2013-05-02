@@ -1,0 +1,28 @@
+{
+	"name": "classycompare",
+	"title": "jQuery ClassyCompare",
+	"description": "This is a jQuery plugin that gives you the ability to compare two images (before and after, etc) via a nice interface.",
+	"keywords": [
+		"compare",
+		"effects",
+		"interface"
+	],
+	"version": "1.1.1",
+	"author": {
+		"name": "Marius Stanciu - Sergiu",
+		"url": "http://www.class.pm"
+	},
+	"licenses": [
+		{
+			"type": "GPLv3",
+			"url": "http://www.gnu.org/licenses/gpl-3.0.txt"
+		}
+	],
+	"bugs": "https://github.com/classpm/jquery-classycompare/issues",
+	"homepage": "http://www.class.pm/projects/jquery/classycompare/",
+	"docs": "http://www.class.pm/projects/jquery/classycompare/",
+	"download": "https://github.com/classpm/jquery-classycompare/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.6"
+	}
+}
