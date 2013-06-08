@@ -23,7 +23,9 @@
                 $(this).children("img").hide();
                 $(this).css({
                     overflow: "hidden",
-                    position: "relative"
+                    position: "relative",
+					height: i+"px",
+					width: h+"px"
                 });
                 $(this).append('<div class="uc-mask"></div>');
                 $(this).append('<div class="uc-bg"></div>');
@@ -41,8 +43,7 @@
             }).mousemove(function (c) {
                 var d = b;
                 var pos_img = $(this).position()["left"];
-                var pos_mouse = c.pageX - $(this).children(".uc-mask").offset().left;
-                var new_width = pos_mouse - pos_img;
+                var new_width = c.pageX - pos_img;
                 var img_width = $(this).width();
                 var img_cap_one = $(this).children("img:eq(0)").attr("alt");
                 var img_cap_two = $(this).children("img:eq(1)").attr("alt");
