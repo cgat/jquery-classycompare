@@ -11,7 +11,7 @@
     $.fn.extend({
         ClassyCompare: function (b) {
             var c = {
-                defaultgap: 50,
+                defaultgap: "half",
                 leftgap: 10,
                 rightgap: 10,
                 caption: false,
@@ -20,20 +20,26 @@
             var b = $.extend(c, b);
             return this.each(function () {
                 var c = b, h = $(this).children("img:eq(0)").width(), i = $(this).children("img:eq(0)").height();
+                $(this).css("height",i);
+                $(this).css("width",h);
                 $(this).children("img").hide();
                 $(this).css({
                     overflow: "hidden",
-                    position: "relative",
-					height: i+"px",
-					width: h+"px"
+                    position: "relative"
                 });
                 $(this).append('<div class="uc-mask"></div>');
                 $(this).append('<div class="uc-bg"></div>');
                 $(this).append('<div class="uc-caption">' + $(this).children("img:eq(0)").attr("alt") + "</div>");
                 $(this).children(".uc-mask, .uc-bg").width(h);
                 $(this).children(".uc-mask, .uc-bg").height(i);
+                if(c.defaultgap=="half"){
+                    c.defaultgap = h/2;
+                }
+                else {
+                    c.defaultgap=h-c.defaultgap;
+                }
                 $(this).children(".uc-mask").animate({
-                    width: h - c.defaultgap
+                    width: c.defaultgap
                 }, 1e3);
                 $(this).children(".uc-mask").css("backgroundImage", "url(" + $(this).children("img:eq(0)").attr("src") + ")");
                 $(this).children(".uc-bg").css("backgroundImage", "url(" + $(this).children("img:eq(1)").attr("src") + ")");
